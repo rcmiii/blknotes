@@ -11,6 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120127052753) do
+
+  create_table "listings", :force => true do |t|
+    t.string   "name"
+    t.text     "blurb"
+    t.integer  "main_image"
+    t.string   "listing_image"
+    t.string   "thumbnails"
+    t.string   "images"
+    t.string   "sponsored"
+    t.string   "address1"
+    t.string   "address2"
+    t.integer  "hot"
+    t.integer  "neighborhood"
+    t.float    "rating"
+    t.string   "phone"
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "city"
+    t.string   "hours"
+    t.text     "su_review"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
