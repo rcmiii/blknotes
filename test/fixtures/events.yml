@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  blurb: MyText
+  blurb_short: MyText
+  image: MyString
+  start_date: 
+  end_date: 
+  price: 1.5
+  sponsored: MyString
+  address1: MyString
+  address2: MyString
+  phone: MyString
+  zip: 1
+  city_id: 1
+  neighborhood_id: 1
+  weekly_event: false
+  su_review: MyText
+  active: false
+
+two:
+  name: MyString
+  blurb: MyText
+  blurb_short: MyText
+  image: MyString
+  start_date: 
+  end_date: 
+  price: 1.5
+  sponsored: MyString
+  address1: MyString
+  address2: MyString
+  phone: MyString
+  zip: 1
+  city_id: 1
+  neighborhood_id: 1
+  weekly_event: false
+  su_review: MyText
+  active: false

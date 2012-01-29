@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120127052753) do
+ActiveRecord::Schema.define(:version => 20120129032514) do
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.text     "blurb"
+    t.text     "blurb_short"
+    t.string   "image"
+    t.integer  "start_date"
+    t.integer  "end_date"
+    t.float    "price"
+    t.string   "sponsored"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "phone"
+    t.integer  "zip"
+    t.integer  "city_id"
+    t.integer  "neighborhood_id"
+    t.boolean  "weekly_event"
+    t.text     "su_review"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "listings", :force => true do |t|
     t.string   "name"
@@ -24,17 +46,20 @@ ActiveRecord::Schema.define(:version => 20120127052753) do
     t.string   "address1"
     t.string   "address2"
     t.integer  "hot"
-    t.integer  "neighborhood"
+    t.integer  "neighborhood_id"
     t.float    "rating"
     t.string   "phone"
     t.float    "lat"
     t.float    "long"
-    t.integer  "city"
+    t.integer  "city_id"
     t.string   "hours"
     t.text     "su_review"
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "zip"
+    t.integer  "category_id"
+    t.text     "blurb_short"
   end
 
 end
