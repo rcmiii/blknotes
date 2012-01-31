@@ -1,0 +1,5 @@
+class City < ActiveRecord::Base
+  has_many :listings
+  has_many :events
+  has_many :neighborhoods
+end

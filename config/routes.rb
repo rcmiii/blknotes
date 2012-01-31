@@ -1,4 +1,9 @@
 Blknotes::Application.routes.draw do
+  resources :cities
+  resources :neighborhoods
+  resources :categories
+  resources :listings
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

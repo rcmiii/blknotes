@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-<%= render 'layouts/head'%>
+<%= render 'layouts/partials/head'%>
 <body>
 	<div class="wrapper">
-		<%= render 'layouts/header'%>
-		<%= render 'layouts/top_menu'%>
+		<%= render 'layouts/partials/header'%>
+		<%= render 'layouts/partials/top_menu'%>
 		<div class="content">		
-			<%= render 'layouts/right_content'%>
+			<%= render 'layouts/partials/right_content'%>
 			<div class="main_content">
 				<%= yield %>
 			</div>
 		</div>
-		<%= render 'layouts/footer'%>
+		<%= render 'layouts/partials/footer'%>
 	</div>
 </body>
 </html>
