@@ -1,4 +1,4 @@
-class CitiesController < ApplicationController
+class Admin::CitiesController < ApplicationController
   def new
   end
 
