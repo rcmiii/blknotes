@@ -1,5 +1,72 @@
-<h1>Listings#new</h1>
-<p>Find me in app/views/listings/new.html.erb</p>
-<% params.each do |param|%>
-	<%= param %>
+<style>
+	.form_input{
+		margin: 10px 0;
+	}
+</style>
+<h1>Create a new Listing:</h1>
+<%= form_for([:admin, @listing]) do |f| %>
+  <div class="form_input">
+  <%= f.label :name %>
+  <%= f.text_field :name%>
+  </div>
+  <div class="form_input">
+  <%= f.label :address1 %>
+  <%= f.text_field :address1%>
+  </div>
+  <div class="form_input">
+  <%= f.label :address2 %>
+  <%= f.text_field :address2 %>
+  </div>
+  <div class="form_input">
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+  </div>
+  <div class="form_input">
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  </div>
+  <div class="form_input">
+  <%= f.label :hours %>
+  <%= f.text_field :hours %>
+  </div>
+  <%= f.label :neighborhood %>
+  <select name="listing[neighborhood_id]">
+  	<% @neighborhoods.each do |hood|%>
+	  <option value="<%= hood.id %>"><%= hood.name %></option>
+    <% end %>
+  </select><br/>
+  
+  <select name="listing[category_id]">
+	<% @categories.each do |category|%>
+	  <option value="<%= category.id %>"><%= category.name %></option>
+	<% end %>
+  </select><br/>
+  
+  <%= f.label :blurb, "Full blurb for listing page" %>
+  <div class="form_input">
+  	<textarea name="listing[blurb]"></textarea>
+  </div><br/>
+  
+  <%= f.label :blurb_short, "Short ~1 line blurb, for Citynotes/Mynotes" %>
+  <div class="form_input">
+  	<textarea name="listing[blurb_short]"></textarea>
+  </div><br/>
+  
+  <%= f.label :su_review, "Super User Review" %>
+  <div class="form_input">
+  	<textarea name="listing[su_review]"></textarea>
+  </div>
+  <div class="form_input">
+    <%= f.submit "Create" %>
+  </div>
+  
+  <%= f.file_field :image1 %><br/>
+  
+  <%= f.file_field :image2 %><br/>
+  
+  <%= f.file_field :image3 %><br/>
+  
+  <%= f.file_field :image4 %><br/>
+  
+  <input type="hidden" name="city_id" value="<%= params[:city_id]%>" />>
 <% end %>

@@ -5,5 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-City.create({name: 'Chicago'})
+City.create({name: 'Chicago', state: 'IL'})
 Neighborhood.create([{ name: 'South Loop', city_id: 1},{ name: 'Wicker Park', city_id: 1},{ name: 'Bucktown', city_id: 1},{ name: 'Logan Square', city_id: 1}])
+Category.create({name: 'Salon'},{name: 'Barber Shop'},{name: 'Nightlife'},{name: 'Doctor/Dentist'})

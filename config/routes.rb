@@ -11,6 +11,9 @@ Blknotes::Application.routes.draw do
       resources :categories
       resources :listings
     end
+    resources :neighborhoods
+    resources :categories
+    resources :listings
   end
 
   # The priority is based upon order of creation:
