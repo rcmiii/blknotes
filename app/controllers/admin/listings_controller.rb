@@ -2,7 +2,8 @@ class Admin::ListingsController < ApplicationController
   def new
     @title = "New Listing"
     @listing = Listing.new
-    @neighborhoods = City.find(params[:city_id]).neighborhoods
+    
+    @city = City.where(:name => params[:city_id].capitalize).first;
     @categories = Category.all
     render :layout => "admin"
   end

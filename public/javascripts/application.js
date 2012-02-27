@@ -30,7 +30,7 @@ $(function(){
   
   /*listing page js*/
   $('.listing_thumb').click(function(){
-    $('img.main_photo').attr('src', "images/entertainment/" + $(this).attr('id') + ".png");
+    $('img.main_photo').attr('src', $(this).attr('id'));
   });
 //fancybox plugin part
   $("a#new_review_fancy").click(function(){

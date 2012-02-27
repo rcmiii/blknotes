@@ -17,13 +17,17 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'rmagick'
+#gem 'rmagick'
 
 gem 'paperclip'
 
 gem 'jquery-rails'
 
 gem 'rest-client'
+
+gem 'aws-sdk'
+
+gem 'aws-s3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

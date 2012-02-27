@@ -28,9 +28,12 @@
 <div class="listing">
   <div class="photos">
     <div class="main_photo">
-      <img id="picture19" class="main_photo" src="images/entertainment/picture19.png" width="225px" max-height="100%" />
+      <%= image_tag @listing.image1.url(:main), :class => "main_photo"%>
     </div>
-    <img id="picture20" src="images/entertainment/picture20.png" height="50px" width="50px" class="listing_thumb"/><img id="picture" src="images/entertainment/picture.png" height="50px" width="50px" class="listing_thumb"/><img id="picture19" src="images/entertainment/picture19.png" height="50px" width="50px" class="listing_thumb"/><img id="picture17" src="images/entertainment/picture17.png" height="50px" width="50px" class="listing_thumb"/>
+    <%= image_tag @listing.image1.url(:thumb), :id => @listing.image1.url(:main), :class => "listing_thumb"%>
+    <%= image_tag @listing.image2.url(:thumb), :id => @listing.image2.url(:main), :class => "listing_thumb"%>
+    <%= image_tag @listing.image3.url(:thumb), :id => @listing.image3.url(:main), :class => "listing_thumb"%>
+    <%= image_tag @listing.image4.url(:thumb), :id => @listing.image4.url(:main), :class => "listing_thumb"%>
   </div>
   <div class="listing_info">
   <h1><%=  @listing.name %></h1>
@@ -59,6 +62,4 @@
     <div class="review">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt" -User</div>
     <div class="review light_gray">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt" -Another User</div>
   </div>
-</div>
- </div>
 </div>

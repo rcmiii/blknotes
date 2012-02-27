@@ -343,6 +343,10 @@ input#submit_review{
   text-align: right;
 }
 
+div.main_photo{
+	height: 180px;
+}
+
 /*
 *
 * MYNOTES / CITYNOTES PAGES CSS
