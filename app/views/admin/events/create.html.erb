@@ -1,0 +1,50 @@
+<style>
+	#map_canvas{
+		height: 200px;
+		width: 200px;
+	}
+</style>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?&sensor=false"></script>
+<script type="text/javascript">
+  $(function(){
+  	initialize();
+  })
+  function initialize() {
+    var myOptions = {
+      center: new google.maps.LatLng(<%=  @event.lat %>, <%=  @event.long %>),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+    var listing_marker = new google.maps.Marker(
+    	{	
+    		map: map,
+    		position: new google.maps.LatLng(<%=  @event.lat %>, <%=  @event.long %>)
+    	}
+    ) 
+  }
+</script>
+<div class="listing">
+  <div class="photos">
+    <div class="main_photo">
+      <%= image_tag @event.image1.url(:main), :class => "main_photo"%>
+    </div>
+  </div>
+  <div class="listing_info">
+  <h1><%=  @event.name %></h1>
+  Address: <%=  @event.address1 %>, <%=  @event.city.name %>, <%=  @event.city.state %> <%=  @event.zip %><a href="#">Map This!</a><br><br>
+  Phone: <%=  @event.phone %><br><br>
+  Price: <%=  @event.price %><br><br>
+  Starts: <%=  Time.at(@event.start_date).strftime('%I:%M%p on %A, %B %d') %>
+  Ends: <%=  Time.at(@event.end_date).strftime() %><br/>
+    
+  </div>
+  <div style="float:left;"">
+    <div id="map_canvas"></div>
+  </div>
+  <div class="listing_description" style="clear:both;">
+  	<%= @event.blurb %>
+  </div>
+  <div class="button green" id="mynotes_add">Add to My Notes</div>
+</div>

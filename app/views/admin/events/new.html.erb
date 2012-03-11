@@ -1,0 +1,77 @@
+<style>
+	.form_input{
+		margin: 10px 0;
+	}
+</style>
+<h1>Create a new Listing:</h1>
+<%= form_for([:admin, @event]) do |f| %>
+  <div class="form_input">
+  <%= f.label :name %>
+  <%= f.text_field :name%>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :address1 %>
+  <%= f.text_field :address1%>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :address2 %>
+  <%= f.text_field :address2 %>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :starts %>
+  <%= f.text_field :start_date %>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :ends %>
+  <%= f.text_field :end_date %>
+  </div>
+  
+  <div class="form_input">
+  <%= f.label :weekly? %>
+  <%= f.check_box :weekly_event %>
+  </div>
+  
+  <%= f.label :neighborhood %>
+  <select name="event[neighborhood_id]">
+  	<% @city.neighborhoods.each do |hood|%>
+	  <option value="<%= hood.id %>"><%= hood.name %></option>
+    <% end %>
+  </select><br/>
+  
+  <%= f.label :blurb, "Full blurb for event page" %>
+  <div class="form_input">
+  	<textarea name="event[blurb]"></textarea>
+  </div><br/>
+  
+  <%= f.label :blurb_short, "Short ~1 line blurb, for Citynotes/Mynotes" %>
+  <div class="form_input">
+  	<textarea name="event[blurb_short]"></textarea>
+  </div><br/>
+
+  <div class="form_input">
+    <%= f.submit "Create" %>
+  </div>
+  
+  <%= f.file_field :image %><br/>
+  
+  <input type="hidden" name="event[city_id]" value="<%= @city.id%>" />>
+<% end %>

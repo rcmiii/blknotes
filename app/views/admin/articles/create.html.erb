@@ -1,0 +1,7 @@
+<div class="article">
+	<h1 class="article"><%= @article.title %></h1>
+	<h2 class="article"><%= @article.subtitle %></h2>
+	<h2 class="author"><%= @article.author %></h2>
+	<%= image_tag @article.image.url(:main), :height => "400px", :width => "500px", :class => "article_image"%><br />
+	<div class="article_main"><%= @article.article%></div>
+</div>

@@ -10,10 +10,13 @@ Blknotes::Application.routes.draw do
       resources :neighborhoods
       resources :categories
       resources :listings
+      resources :events
     end
     resources :neighborhoods
     resources :categories
     resources :listings
+    resources :spotlights
+    resources :articles
   end
 
   # The priority is based upon order of creation:
