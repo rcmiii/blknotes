@@ -3,31 +3,25 @@
 		margin: 10px 0;
 	}
 </style>
-<h1>Create a new Article</h1>
+<h1>Create a new Spotlight</h1>
 <%= form_for([:admin, @spotlight]) do |f| %>
+
   <div class="form_input">
-  <%= f.label :title %>
-  <%= f.text_field :title%>
+  <%= f.label :url %>
+  <%= f.text_field :url%>
   </div>
-  <div class="form_input">
-  <%= f.label :subtitle %>
-  <%= f.text_field :subtitle%>
-  </div>
-  <div class="form_input">
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  </div>
+
   <%= f.label :city %>
-  <select name="listing[city_id]">
+  <select name="spotlight[city_id]">
   	<% @city.each do |city|%>
 	  <option value="<%= city.id %>"><%= city.name %></option>
     <% end %>
     <option value="0">All Cities</option>
   </select><br/>
   
-  <%= f.label :article, "Full Article" %>
+  <%= f.label :description, "Full description text" %>
   <div class="form_input">
-  	<textarea name="listing[blurb]"></textarea>
+  	<textarea name="spotlight[description]"></textarea>
   </div><br/>
   
   <%= f.file_field :image %><br/>

@@ -18,7 +18,7 @@
   <%= f.text_field :author %>
   </div>
   <%= f.label :city %>
-  <select name="listing[city_id]">
+  <select name="article[city_id]">
   	<% @city.each do |city|%>
 	  <option value="<%= city.id %>"><%= city.name %></option>
     <% end %>
@@ -27,7 +27,7 @@
   
   <%= f.label :article, "Full Article" %>
   <div class="form_input">
-  	<textarea name="listing[blurb]"></textarea>
+  	<textarea name="article[article]"></textarea>
   </div><br/>
   
   <%= f.file_field :image %><br/>

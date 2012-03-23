@@ -11,6 +11,8 @@ Blknotes::Application.routes.draw do
       resources :categories
       resources :listings
       resources :events
+      resources :spotlights
+      resources :articles
     end
     resources :neighborhoods
     resources :categories
