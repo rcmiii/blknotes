@@ -69,8 +69,9 @@ function auto_fade(start){
 
 function next_slide(){
   var slide_to;
-  if(parseInt($('.current').attr('id')) >= 5){
-    slide_to = 1;
+  var max_slide = +$('li.menu_selector').last().attr('id');
+  if(parseInt($('.current').attr('id')) >= max_slide){
+    slide_to = 0;
   } else {
     slide_to = parseInt($('.current').attr('id')) + 1;
   }

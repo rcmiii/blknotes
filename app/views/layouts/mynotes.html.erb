@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<%= render 'layouts/partials/head'%>
+<body>
+	<div class="wrapper">
+		<%= render 'layouts/partials/header'%>
+		<%= render 'layouts/partials/top_menu'%>
+		<div class="content">
+			<%= render 'layouts/partials/right_content'%>
+			<div class="main_content">
+				<%= render 'cities/mynotes_left'%>
+				<div class="listings_content">
+				  <%= yield %>
+				</div>
+			</div>
+		</div>
+		<%= render 'layouts/partials/footer'%>
+	</div>
+</body>
+</html>

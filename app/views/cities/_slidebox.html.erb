@@ -1,0 +1,21 @@
+<div class="viewer">
+  <div class="img_box">
+  	<% @city.spotlights.each_with_index do |spotlight, i|%>
+	<a href="<%= spotlight.url %>"><div class="img_contents <%= if (i == 0) then "current" end%>" id="<%= i %>" <%= if (i == 0) then 'style=display:block;' end%>>
+		<%= image_tag spotlight.image.url(:main), :height => "400px", :width => "500px"%>
+		<div class="spotlight_headline"></div>
+		<div class="spotlight_text"><%= spotlight.description %></div>
+	</div>
+	</a>
+<% end %>
+  </div>
+  <div class="menu_box">
+  <div style="width:125px; margin:0 0 0 300px;">
+    <ul>
+      <% for i in (0..@city.spotlights.count-1) %>
+      <li class="menu_selector opt<%= i %> <%= if (i == 0) then "current_menu_box" end%>" id="<%= i %>">&bull;</li>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+</div>

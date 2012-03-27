@@ -29,6 +29,10 @@ gem 'aws-sdk'
 
 gem 'aws-s3'
 
+gem 'kaminari'
+
+gem 'devise'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

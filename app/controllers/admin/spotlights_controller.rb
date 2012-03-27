@@ -20,12 +20,12 @@ class Admin::SpotlightsController < ApplicationController
   
   def create
     @spotlight = Spotlight.new(params[:spotlight])
-    if (params[:spotlight][:city_id] == '0')
+    if (params[:city_id] == '0')
       City.all.each do |city|
         @spotlight.cities << city;
       end
     else
-      @spotlight.cities << City.find(params[:spotlight][:city_id]);
+      @spotlight.cities << City.find(params[:city_id]);
     end
     @spotlight.save
     render :layout => "admin"

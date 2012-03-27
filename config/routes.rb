@@ -3,6 +3,8 @@ Blknotes::Application.routes.draw do
     resources :neighborhoods
     resources :categories
     resources :listings
+    resources :articles
+    resources :events
   end
   
   namespace :admin do

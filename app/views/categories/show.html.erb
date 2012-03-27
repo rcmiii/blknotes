@@ -1,0 +1,16 @@
+<%= paginate @listings%>
+
+<% for listing in @listings %>
+<div class="part_listing clear">
+  <div class="part_listing_image"><%= image_tag listing.image1.url(:listing),:height => '100px',:width => '100px', :class => "listing_thumb"%></div>
+  <ul class="part_listing_info">
+    <li><h2><%= listing.name %></h2></li>
+    <li class="blurb"><%= listing.blurb %></li>
+    <li>Neighborhood: <%= listing.neighborhood.name %></li>
+    <li>Rating:</li>
+    <li>Tags:</li>
+  </ul>
+  <div class="part_listing_actions"><%= link_to "/", "More Info"%> | <a id="new_review" href="#review_box">Write Review</a> | <a class="add_to_mynotes" href="#" id="listingid" style="color:#cccccc">&hearts;</a></div>
+  <div id="review_box" style="display:none;"></div>
+</div>
+<% end %>

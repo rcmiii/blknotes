@@ -12,7 +12,7 @@
   </div>
 
   <%= f.label :city %>
-  <select name="spotlight[city_id]">
+  <select name="city_id">
   	<% @city.each do |city|%>
 	  <option value="<%= city.id %>"><%= city.name %></option>
     <% end %>
